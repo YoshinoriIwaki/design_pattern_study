@@ -1,7 +1,7 @@
 ﻿
 public class MyTeacher extends Teacher {
 	private StudentList studentList;
-	
+
 	public void createStudentList() {
 		studentList = new StudentList(5);
 		studentList.add(new Student("赤井亮太", 1));
@@ -10,11 +10,16 @@ public class MyTeacher extends Teacher {
 		studentList.add(new Student("西森俊介", 1));
 		studentList.add(new Student("中ノ森玲菜", 2));
 	}
-	
+
 	public void callStudents() {
-		int size = studentList.getLastNum();
-		for(int n=0; n<size; n++) {
-			System.out.println(studentList.getStudentAt(n).getName());
+		Iterator itr = studentList.iterator();
+		while(itr.hasNext()) {
+			System.out.println(((student)itr.next()).getName());
 		}
+
+//		int size = studentList.getLastNum();
+//		for(int n=0; n<size; n++) {
+//			System.out.println(studentList.getStudentAt(n).getName());
+//		}
 	}
 }
